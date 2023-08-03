@@ -1,0 +1,8 @@
+.main-fotos {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 5px;
+   // width: calc(100% - 600px);
+   max-width: 915px;
+   margin: 0 auto;
+}
