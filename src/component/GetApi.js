@@ -5,6 +5,9 @@ import Buttons from './Buttons'
 
 function GetApi() {
    const [category, setCategory] = useState('mixed')
+   const clickEvent = (category) => {
+      setCategory(category);
+   };
 
    const urlApi = `https://api.pexels.com/v1/search?query=${category}`
 
@@ -26,7 +29,24 @@ function GetApi() {
          .catch(error => {
             console.error('Error fetching data:', error);
          });
-   }, []);
+   }, [urlApi]);
+
+   const { loading, error } = data;
+   if (loading) {
+      return <div className={loading}>Loading...</div>;
+   }
+
+   if (error) {
+      return (
+         <div className={error}>
+            Error:
+            {' '}
+            {error}
+         </div>
+      );
+   }
+
+
    const getFotos = data.photos
    const result = getFotos?.map((foto) => {
       return <GetApiTemplate key={foto.id} src={foto.src.medium} alt={foto.alt} />
@@ -36,7 +56,7 @@ function GetApi() {
          <div className='main-fotos'>
             {result}
          </div>
-         <Buttons />
+         <Buttons clickEvent={clickEvent} />
       </>
    )
 }
