@@ -1,8 +1,17 @@
+@import "./variables.scss";
+
 .main-fotos {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    gap: 5px;
-   // width: calc(100% - 600px);
+   cursor: pointer;
    max-width: 915px;
-   margin: 0 auto;
+   margin: 1% auto;
+   position: relative;
+   @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   // @include breakpoint(sm) {
+   //    grid-template-columns: repeat(1, 1fr);
+   // }
 }

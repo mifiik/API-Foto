@@ -31,20 +31,20 @@ function GetApi() {
          });
    }, [urlApi]);
 
-   const { loading, error } = data;
-   if (loading) {
-      return <div className={loading}>Loading...</div>;
-   }
+   // const { loading, error } = data;
+   // if (loading) {
+   //    return <div className={loading}>Loading...</div>;
+   // }
 
-   if (error) {
-      return (
-         <div className={error}>
-            Error:
-            {' '}
-            {error}
-         </div>
-      );
-   }
+   // if (error) {
+   //    return (
+   //       <div className={error}>
+   //          Error:
+   //          {' '}
+   //          {error}
+   //       </div>
+   //    );
+   // }
 
 
    const getFotos = data.photos

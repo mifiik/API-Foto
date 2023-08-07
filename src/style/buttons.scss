@@ -1,0 +1,37 @@
+@import "./variables.scss";
+
+.buttons__block {
+   position: fixed;
+   top: 85%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 998;
+   @include element_position(flex, column, center, center, 0);
+   .buttons__element {
+      @include element_position(flex, row, center, center, 10px);
+      button {
+         border-radius: 20px;
+         border: none;
+         font-size: 18px;
+         padding: 10px 15px;
+         cursor: pointer;
+         color: $white;
+         background-color: $secondary-color;
+         box-shadow: 0 0 8px $white;
+      }
+   }
+   .search {
+      @include element_position(flex, 0, center, 0, 0);
+      margin: 1% auto;
+      input {
+         border-color: $white;
+         border-radius: 10px;
+         box-shadow: 0 0 8px $white;
+         font-size: 20px;
+         height: 25px;
+         outline: none;
+         padding: 20px;
+         width: 100%;
+      }
+   }
+}

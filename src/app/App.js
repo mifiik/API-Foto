@@ -1,11 +1,10 @@
 import GetApi from '../component/GetApi';
-import './app.scss';
 
 function App() {
   return (
-    <>
+    <div className='app'>
       <GetApi />
-    </>
+    </div>
   );
 }
 

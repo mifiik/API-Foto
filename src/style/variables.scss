@@ -1,0 +1,39 @@
+$white: rgb(255, 255, 255);
+$primaryBody-color: rgb(250, 235, 215);
+$secondary-color: rgb(42, 41, 42);
+
+@mixin element_position($d, $fd, $jf, $al, $gap) {
+   display: $d;
+   flex-direction: $fd;
+   justify-content: $jf;
+   align-items: $al;
+   gap: $gap;
+}
+
+@mixin breakpoint($breakpoint) {
+   @if $breakpoint == "xxl" {
+      @media (max-width: 1400px) {
+         @content;
+      }
+   } @else if $breakpoint == "sxl" {
+      @media (max-width: 1200px) {
+         @content;
+      }
+   } @else if $breakpoint == "xl" {
+      @media (max-width: 992px) {
+         @content;
+      }
+   } @else if $breakpoint == "lg" {
+      @media (max-width: 768px) {
+         @content;
+      }
+   } @else if $breakpoint == "md" {
+      @media (max-width: 576px) {
+         @content;
+      }
+   } @else if $breakpoint == "sm" {
+      @media (max-width: 320px) {
+         @content;
+      }
+   }
+}

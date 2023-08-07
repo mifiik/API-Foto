@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import '../style/buttons.scss'
 
 function Buttons({ clickEvent }) {
    const [inputValue, setInputValue] = useState('');
@@ -15,19 +16,19 @@ function Buttons({ clickEvent }) {
 
 
    return (
-      <>
-         <div>
+      <div className='buttons__block'>
+         <div className='buttons__element'>
             <button onClick={() => clickAction('Mixed')}>Mixed</button>
             <button onClick={() => clickAction('Ocean')}>Ocean</button>
             <button onClick={() => clickAction('Road')}>Road</button>
             <button onClick={() => clickAction('Creative')}>Creative</button>
          </div>
-         <div>
+         <div className='search'>
             <form>
                <input onChange={inputEvent} type='search' placeholder='enter the category' value={inputValue}></input>
             </form>
          </div>
-      </>
+      </div>
    )
 }
 
