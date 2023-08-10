@@ -18,6 +18,13 @@
          color: $white;
          background-color: $secondary-color;
          box-shadow: 0 0 8px $white;
+         @include breakpoint(lg) {
+            font-size: 15px;
+            padding: 8px 13px;
+         }
+      }
+      @include breakpoint(lg) {
+         gap: 4px;
       }
    }
    .search {

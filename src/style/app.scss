@@ -1,0 +1,11 @@
+.app {
+   .loading,
+   .error {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 600;
+      margin-top: 15%;
+   }
+}

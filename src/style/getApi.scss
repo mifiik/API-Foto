@@ -1,17 +1,10 @@
 @import "./variables.scss";
 
 .main-fotos {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 5px;
+   @include element_position(flex, row, center, center, 5px);
+   flex-wrap: wrap;
    cursor: pointer;
    max-width: 915px;
    margin: 1% auto;
    position: relative;
-   @include breakpoint(md) {
-      grid-template-columns: repeat(2, 1fr);
-   }
-   // @include breakpoint(sm) {
-   //    grid-template-columns: repeat(1, 1fr);
-   // }
 }
