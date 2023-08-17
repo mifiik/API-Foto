@@ -6,14 +6,16 @@ function Buttons({ clickEvent }) {
    const [inputValue, setInputValue] = useState('');
 
    function clickAction(category) {
-      clickEvent(category);
+      if (/^[A-Za-z0-9]+$/.test(category)) {
+         clickEvent(category);
+      }
    }
 
    function inputEvent(event) {
-      setInputValue(event.target.value);
-      clickEvent(event.target.value);
+      const filteredValue = event.target.value.replace(/[^A-Za-z0-9]/g, '');
+      setInputValue(filteredValue);
+      clickAction(filteredValue);
    }
-
 
    return (
       <div className='buttons__block'>
@@ -25,7 +27,7 @@ function Buttons({ clickEvent }) {
          </div>
          <div className='search'>
             <form>
-               <input onChange={inputEvent} type='search' placeholder='enter the category' value={inputValue}></input>
+               <input onChange={inputEvent} type='search' placeholder='enter the category' value={inputValue} pattern='[A-Za-z0-9]*'></input>
             </form>
          </div>
       </div>
